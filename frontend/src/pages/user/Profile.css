@@ -1,0 +1,199 @@
+.profile-container-shell {
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.profile-card {
+  background: var(--bg-card) !important;
+  color: var(--text-primary);
+  border-radius: 6px;
+  padding: 32px;
+  border: 1px solid var(--border-muted);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 850px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-muted);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+
+.header-title-flex {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.title-icon {
+  color: var(--accent-glow) !important;
+}
+
+.profile-card-header h2 {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+.edit-buttons-row {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-edit, .btn-cancel, .btn-save {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-edit {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+}
+
+.btn-edit:hover {
+  background: var(--border-muted);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.btn-cancel {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+}
+
+.btn-cancel:hover {
+  background: var(--border-muted);
+  color: var(--text-primary);
+}
+
+.btn-save {
+  background: rgba(20, 184, 166, 0.2);
+  border: 1px solid rgba(20, 184, 166, 0.4);
+  color: var(--accent-glow);
+}
+
+.btn-save:hover {
+  background: rgba(20, 184, 166, 0.35);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.profile-form-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 24px;
+}
+
+.form-col-50 {
+  width: calc(50% - 12px);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-col-50-spacer {
+  width: calc(50% - 12px);
+}
+
+.form-col-100 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.profile-form-grid label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.profile-form-grid input,
+.profile-form-grid select,
+.profile-form-grid textarea {
+  padding: 12px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 100%;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+/* Disabled (Read-Only) input states matching new dark UI */
+.profile-form-grid input:disabled,
+.profile-form-grid select:disabled,
+.profile-form-grid textarea:disabled {
+  background: rgba(15, 15, 18, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.6);
+  cursor: not-allowed;
+  font-weight: 500;
+}
+
+/* Enabled (Editable) input states matching new dark UI */
+.profile-form-grid input:not(:disabled),
+.profile-form-grid select:not(:disabled),
+.profile-form-grid textarea:not(:disabled) {
+  background: rgba(15, 15, 18, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  outline: none;
+}
+
+.profile-form-grid input:not(:disabled):focus,
+.profile-form-grid select:not(:disabled):focus,
+.profile-form-grid textarea:not(:disabled):focus {
+  border-color: rgba(20, 184, 166, 0.5);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.profile-success-toast {
+  margin-top: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  align-self: flex-start;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .form-col-50, .form-col-50-spacer {
+    width: 100%;
+  }
+  .profile-card {
+    padding: 20px;
+  }
+}

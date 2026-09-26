@@ -1,0 +1,711 @@
+/* ============================================================
+   GLOBAL DASHBOARD PAGE LAYOUT
+   ============================================================ */
+
+.dashboard-page {
+  padding: 24px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid var(--border-muted);
+  padding-bottom: 14px;
+  margin-bottom: 16px;
+}
+
+.panel-header h3 {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   WELCOME
+   ============================================================ */
+
+.welcome-banner {
+  padding: 20px 28px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-muted);
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.welcome-left h2 {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0 0 6px 0;
+  letter-spacing: 0.02em;
+}
+
+.welcome-status {
+  font-size: 13px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-dot.online {
+  background: var(--color-success);
+}
+
+.status-dot.offline {
+  background: var(--color-danger);
+}
+
+.current-date {
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* ============================================================
+   CENTERED SOS
+   ============================================================ */
+
+.centered-layout-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.sos-panel {
+  padding: 24px 32px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-muted);
+  border-radius: 6px;
+  max-width: 680px;
+  width: 100%;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================================
+   PANEL COLORS BY DATABASE STATUS
+   ============================================================ */
+
+.sos-idle-panel {
+  border-color: rgba(20, 184, 166, 0.2);
+}
+
+.sos-pending-panel {
+  border-color: #EF4444 !important;
+  background: rgba(239, 68, 68, 0.045) !important;
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.08);
+}
+
+.sos-accepted-panel,
+.sos-in-progress-panel {
+  border-color: #F59E0B !important;
+  background: rgba(245, 158, 11, 0.045) !important;
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.08);
+}
+
+.sos-active-panel,
+.sos-completed-panel {
+  border-color: #22C55E !important;
+  background: rgba(34, 197, 94, 0.045) !important;
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.10);
+}
+
+.sos-icon-idle {
+  color: var(--accent-glow);
+}
+
+.sos-icon-pending {
+  color: #EF4444 !important;
+}
+
+.sos-icon-accepted,
+.sos-icon-in-progress {
+  color: #F59E0B !important;
+}
+
+.sos-icon-active,
+.sos-icon-completed {
+  color: #22C55E !important;
+}
+
+/* ============================================================
+   SOS ACTION AREA
+   ============================================================ */
+
+.sos-action-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 0;
+  gap: 16px;
+}
+
+.sos-trigger-btn {
+  width: 156px;
+  height: 156px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.sos-inner-btn {
+  width: 138px;
+  height: 138px;
+  border-radius: 50%;
+  background: var(--bg-darker);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.sos-btn-text {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+
+/* ============================================================
+   NO SOS - BLUE / PRESSABLE
+   ============================================================ */
+
+.pulsing-blue {
+  background: var(--accent-primary);
+  color: var(--text-primary);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  animation: pulse-teal-glow-large 2s infinite;
+}
+
+.pulsing-blue .sos-inner-btn {
+  color: var(--accent-glow);
+  border-color: rgba(20, 184, 166, 0.3);
+}
+
+/* ============================================================
+   PENDING - RED / DISABLED
+   ============================================================ */
+
+.sos-status-pending {
+  background: #DC2626 !important;
+  color: #FFFFFF !important;
+  cursor: not-allowed !important;
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.45);
+  animation: pulse-red-status 1.5s infinite;
+}
+
+.sos-status-pending .sos-inner-btn {
+  color: #EF4444 !important;
+  border-color: rgba(239, 68, 68, 0.55) !important;
+}
+
+/* ============================================================
+   ACCEPTED - ORANGE / DISABLED
+   ============================================================ */
+
+.sos-status-accepted {
+  background: #D97706 !important;
+  color: #FFFFFF !important;
+  cursor: not-allowed !important;
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.40);
+}
+
+.sos-status-accepted .sos-inner-btn {
+  color: #F59E0B !important;
+  border-color: rgba(245, 158, 11, 0.55) !important;
+}
+
+/* ============================================================
+   IN PROGRESS - ORANGE / DISABLED
+   ============================================================ */
+
+.sos-status-in-progress {
+  background: #EA580C !important;
+  color: #FFFFFF !important;
+  cursor: not-allowed !important;
+  box-shadow: 0 0 18px rgba(249, 115, 22, 0.45);
+  animation: pulse-orange-status 1.8s infinite;
+}
+
+.sos-status-in-progress .sos-inner-btn {
+  color: #F97316 !important;
+  border-color: rgba(249, 115, 22, 0.55) !important;
+}
+
+/* ============================================================
+   ACTIVE - GREEN / DISABLED
+   ============================================================ */
+
+.sos-status-active {
+  background: #16A34A !important;
+  color: #FFFFFF !important;
+  cursor: not-allowed !important;
+  box-shadow: 0 0 18px rgba(34, 197, 94, 0.45);
+  animation: pulse-green-status 2s infinite;
+}
+
+.sos-status-active .sos-inner-btn {
+  color: #22C55E !important;
+  border-color: rgba(34, 197, 94, 0.55) !important;
+}
+
+/* ============================================================
+   COMPLETED - GREEN / PRESSABLE
+   ============================================================ */
+
+.sos-status-completed {
+  background: #16A34A !important;
+  color: #FFFFFF !important;
+  border: 2px solid #22C55E !important;
+  cursor: pointer !important;
+  opacity: 1 !important;
+  box-shadow: 0 0 18px rgba(34, 197, 94, 0.40) !important;
+  animation: none !important;
+}
+
+.sos-status-completed:hover {
+  background: #15803D !important;
+  transform: scale(1.02);
+}
+
+.sos-status-completed .sos-inner-btn {
+  color: #22C55E !important;
+  border-color: rgba(34, 197, 94, 0.65) !important;
+}
+
+.sos-status-completed svg {
+  color: #22C55E !important;
+}
+
+/* ============================================================
+   STATUS TEXT COLORS
+   ============================================================ */
+
+.sos-helper-text {
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-align: center;
+  max-width: 420px;
+  line-height: 1.5;
+  transition: color 0.2s ease;
+}
+
+.sos-text-pending {
+  color: #EF4444 !important;
+}
+
+.sos-text-accepted,
+.sos-text-in_progress {
+  color: #F59E0B !important;
+}
+
+.sos-text-active,
+.sos-text-completed {
+  color: #22C55E !important;
+}
+
+/* ============================================================
+   SOS STAT PILLS
+   ============================================================ */
+
+.active-sos-stats {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.sos-stat-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  color: #22C55E;
+  font-size: 11px;
+  font-family: var(--font-mono);
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+
+@keyframes pulse-teal-glow-large {
+  0% {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(20, 184, 166, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(20, 184, 166, 0);
+  }
+}
+
+@keyframes pulse-red-status {
+  0% {
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.30);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(239, 68, 68, 0.70);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.30);
+  }
+}
+
+@keyframes pulse-orange-status {
+  0% {
+    box-shadow: 0 0 10px rgba(249, 115, 22, 0.30);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(249, 115, 22, 0.70);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(249, 115, 22, 0.30);
+  }
+}
+
+@keyframes pulse-green-status {
+  0% {
+    box-shadow: 0 0 10px rgba(34, 197, 94, 0.30);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(34, 197, 94, 0.70);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(34, 197, 94, 0.30);
+  }
+}
+
+/* ============================================================
+   DEVICE SUMMARY
+   ============================================================ */
+
+.summary-section {
+  width: 100%;
+}
+
+.section-title {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--text-secondary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 16px 0;
+  border-left: 3px solid var(--accent-glow);
+  padding-left: 10px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
+
+.summary-grid .stat-card {
+  min-width: 0;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.stat-card {
+  padding: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-muted);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stat-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stat-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  letter-spacing: 0.05em;
+}
+
+.stat-val {
+  font-size: 22px;
+  color: var(--text-primary);
+  font-weight: 800;
+}
+
+.stat-subtext {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.device-status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 7px;
+  vertical-align: middle;
+}
+
+.device-status-dot.online {
+  background: #22C55E;
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.55);
+}
+
+.device-status-dot.offline {
+  background: #EF4444;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.45);
+}
+
+/* ============================================================
+   BASE STATIONS
+   ============================================================ */
+
+.stations-section {
+  padding: 28px;
+  width: 100%;
+}
+
+.stations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.station-card {
+  padding: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-muted);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 190px;
+  transition: all 0.2s ease;
+}
+
+.station-card:hover {
+  border-color: rgba(20, 184, 166, 0.3);
+  background: rgba(20, 184, 166, 0.05);
+}
+
+.station-card-header h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.station-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 16px 0 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 14px;
+}
+
+.spec-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+}
+
+.spec-label {
+  color: var(--text-secondary);
+}
+
+.spec-val {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.highlight-blue {
+  color: var(--accent-glow) !important;
+  font-weight: 700;
+}
+
+.badge-warning {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 4px;
+}
+
+/* ============================================================
+   MODAL
+   ============================================================ */
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 15, 18, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 450px;
+  padding: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--accent-glow);
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--border-muted);
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+
+.modal-header h3 {
+  font-size: 15px;
+  color: var(--text-primary);
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: var(--color-danger);
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modal-actions {
+  margin-top: 8px;
+  justify-content: flex-end;
+}
+
+.text-area-custom {
+  resize: none;
+  background: rgba(15, 15, 18, 0.6);
+}
+
+.sos-trigger-btn:disabled {
+  cursor: not-allowed !important;
+  opacity: 0.78;
+}
+
+/* COMPLETED must stay clickable even though other status buttons are disabled */
+.sos-status-completed:disabled {
+  cursor: pointer !important;
+  opacity: 1 !important;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .stations-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .welcome-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-page {
+    padding: 20px 16px;
+  }
+
+  .sos-panel {
+    padding: 20px;
+  }
+
+  .active-sos-stats {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 600px) {
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sos-trigger-btn {
+    width: 140px;
+    height: 140px;
+  }
+
+  .sos-inner-btn {
+    width: 124px;
+    height: 124px;
+  }
+}

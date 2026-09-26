@@ -1,0 +1,878 @@
+/* ============================================================
+   RESQMESH - HELP & SUPPORT PAGE
+   DARK ADMIN DASHBOARD STYLE
+============================================================ */
+
+.help-page {
+  width: 100%;
+  color: #f4f4f5;
+  padding-bottom: 35px;
+}
+
+
+/* ============================================================
+   MAIN PANELS
+============================================================ */
+
+.help-main-panel {
+  width: 100%;
+  box-sizing: border-box;
+
+  background: #18181b;
+
+  border: 1px solid #2f3035;
+  border-radius: 9px;
+
+  padding: 24px;
+
+  margin-bottom: 18px;
+}
+
+
+/* ============================================================
+   SECTION HEADER
+============================================================ */
+
+.help-section-header {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  padding-bottom: 15px;
+  margin-bottom: 17px;
+
+  border-bottom: 1px solid #303035;
+}
+
+.help-section-header > svg {
+  color: #14b8a6;
+  width: 21px;
+  height: 21px;
+  flex-shrink: 0;
+}
+
+.help-section-title {
+  margin: 0;
+
+  color: #f4f4f5;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  letter-spacing: 0.2px;
+}
+
+.help-section-subtitle {
+  margin: 4px 0 0;
+
+  color: #71717a;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 1px;
+}
+
+
+/* ============================================================
+   INTRO TEXT
+============================================================ */
+
+.help-intro-text {
+  margin: 0 0 21px;
+
+  max-width: 950px;
+
+  color: #a1a1aa;
+
+  font-size: 14px;
+
+  line-height: 1.75;
+}
+
+
+/* ============================================================
+   INFORMATION CARDS
+============================================================ */
+
+.help-info-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 14px;
+}
+
+
+.help-info-card {
+  min-height: 145px;
+
+  box-sizing: border-box;
+
+  padding: 18px;
+
+  background: #111113;
+
+  border: 1px solid #303035;
+  border-radius: 8px;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.help-info-card:hover {
+  background: #151518;
+
+  border-color: #44454b;
+
+  transform: translateY(-2px);
+}
+
+
+.help-info-icon {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 7px;
+
+  margin-bottom: 13px;
+
+  color: #14b8a6;
+
+  background: rgba(20, 184, 166, 0.09);
+}
+
+
+/* RED */
+
+.help-icon-red {
+  color: #ef4444;
+
+  background: rgba(239, 68, 68, 0.09);
+}
+
+
+/* TEAL */
+
+.help-icon-teal {
+  color: #14b8a6;
+
+  background: rgba(20, 184, 166, 0.09);
+}
+
+
+/* PURPLE */
+
+.help-icon-purple {
+  color: #a855f7;
+
+  background: rgba(168, 85, 247, 0.09);
+}
+
+
+/* AMBER */
+
+.help-icon-amber {
+  color: #f59e0b;
+
+  background: rgba(245, 158, 11, 0.09);
+}
+
+
+.help-info-card h4 {
+  margin: 0 0 8px;
+
+  color: #f4f4f5;
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+
+.help-info-card p {
+  margin: 0;
+
+  color: #8b8b94;
+
+  font-size: 13px;
+
+  line-height: 1.65;
+}
+
+
+/* ============================================================
+   DOCUMENTATION PANEL
+============================================================ */
+
+.help-document-panel {
+  padding-bottom: 20px;
+}
+
+
+.help-documentation {
+  width: 100%;
+
+  background: #111113;
+
+  border: 1px solid #303035;
+
+  border-radius: 8px;
+
+  overflow: hidden;
+}
+
+
+.help-document-wrapper {
+  width: 100%;
+
+  background: #18181b;
+}
+
+
+.help-document-row {
+  min-height: 53px;
+
+  padding: 0 18px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  border-bottom: 1px solid #29292e;
+
+  transition:
+    background 0.2s ease;
+}
+
+
+.help-document-row:hover {
+  background: #1d1d20;
+}
+
+
+.help-document-row.last-row {
+  border-bottom: none;
+}
+
+
+.help-document-left {
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  min-width: 0;
+}
+
+
+.help-document-icon {
+  color: #14b8a6;
+
+  width: 16px;
+  height: 16px;
+
+  flex-shrink: 0;
+}
+
+
+.help-document-name {
+  color: #c4c4c9;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+
+.help-view-btn {
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #14b8a6;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  padding: 8px 10px;
+
+  border-radius: 5px;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.help-view-btn:hover {
+  color: #2dd4bf;
+
+  background: rgba(20, 184, 166, 0.08);
+}
+
+
+/* ============================================================
+   EXPANDED GUIDE CONTENT
+============================================================ */
+
+.help-guide-content {
+  padding: 20px 22px;
+
+  background: #111113;
+
+  border-bottom: 1px solid #303035;
+
+  animation: helpGuideOpen 0.2s ease;
+}
+
+
+@keyframes helpGuideOpen {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+}
+
+
+.help-guide-heading {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 10px;
+}
+
+
+.help-guide-title {
+  color: #f4f4f5;
+
+  font-size: 16px;
+
+  font-weight: 700;
+}
+
+
+.help-guide-badge {
+  padding: 5px 9px;
+
+  border-radius: 5px;
+
+  color: #14b8a6;
+
+  background: rgba(20, 184, 166, 0.08);
+
+  border: 1px solid rgba(20, 184, 166, 0.18);
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+
+.help-guide-description {
+  margin: 0 0 17px;
+
+  color: #a1a1aa;
+
+  font-size: 13px;
+
+  line-height: 1.75;
+
+  max-width: 900px;
+}
+
+
+.help-guide-label {
+  margin-bottom: 8px;
+
+  color: #71717a;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+
+.help-guide-points {
+  margin: 0;
+
+  padding-left: 21px;
+
+  color: #b4b4bb;
+
+  font-size: 13px;
+
+  line-height: 1.9;
+}
+
+
+.help-guide-points li {
+  padding-left: 3px;
+}
+
+
+.help-guide-points li::marker {
+  color: #14b8a6;
+}
+
+
+/* ============================================================
+   QUICK OPERATIONS GUIDE
+============================================================ */
+
+.help-operations-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 14px;
+}
+
+
+.help-step-card {
+  display: grid;
+
+  grid-template-columns: 30px 38px 1fr;
+
+  align-items: start;
+
+  gap: 11px;
+
+  min-height: 120px;
+
+  box-sizing: border-box;
+
+  padding: 17px;
+
+  background: #111113;
+
+  border: 1px solid #303035;
+
+  border-radius: 8px;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.help-step-card:hover {
+  background: #151518;
+
+  border-color: #44454b;
+}
+
+
+.help-step-number {
+  color: #52525b;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  padding-top: 3px;
+}
+
+
+.help-step-icon {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 7px;
+
+  color: #14b8a6;
+
+  background: rgba(20, 184, 166, 0.08);
+}
+
+
+.help-step-content {
+  min-width: 0;
+}
+
+
+.help-step-content h4 {
+  margin: 0 0 7px;
+
+  color: #f4f4f5;
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+
+.help-step-content p {
+  margin: 0;
+
+  color: #85858e;
+
+  font-size: 12px;
+
+  line-height: 1.65;
+}
+
+
+/* ============================================================
+   TROUBLESHOOTING
+============================================================ */
+
+.help-troubleshooting {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 9px;
+}
+
+
+.help-trouble-item {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 13px;
+
+  padding: 15px 17px;
+
+  background: #111113;
+
+  border: 1px solid #303035;
+
+  border-radius: 8px;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.help-trouble-item:hover {
+  background: #151518;
+
+  border-color: #44454b;
+}
+
+
+.help-trouble-icon {
+  color: #f59e0b;
+
+  flex-shrink: 0;
+
+  padding-top: 2px;
+}
+
+
+.help-trouble-title {
+  margin-bottom: 5px;
+
+  color: #e4e4e7;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+
+.help-trouble-text {
+  color: #85858e;
+
+  font-size: 12px;
+
+  line-height: 1.65;
+}
+
+
+/* ============================================================
+   BOTTOM TWO COLUMNS
+============================================================ */
+
+.help-bottom-grid {
+  display: grid;
+
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+  gap: 18px;
+}
+
+
+/* ============================================================
+   USER ROLES
+============================================================ */
+
+.help-role-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 9px;
+}
+
+
+.help-role-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 13px;
+
+  background: #111113;
+
+  border: 1px solid #303035;
+
+  border-radius: 7px;
+}
+
+
+.help-role-badge {
+  min-width: 62px;
+
+  padding: 6px 9px;
+
+  text-align: center;
+
+  box-sizing: border-box;
+
+  border-radius: 5px;
+
+  color: #14b8a6;
+
+  background: rgba(20, 184, 166, 0.07);
+
+  border: 1px solid rgba(20, 184, 166, 0.15);
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+}
+
+
+.help-role-text {
+  color: #85858e;
+
+  font-size: 12px;
+
+  line-height: 1.65;
+}
+
+
+/* ============================================================
+   OPERATIONS SUPPORT
+============================================================ */
+
+.help-support-content {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0;
+}
+
+
+.help-contact-row {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 12px 0;
+
+  border-bottom: 1px solid #29292e;
+}
+
+
+.help-contact-icon {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 7px;
+
+  color: #14b8a6;
+
+  background: rgba(20, 184, 166, 0.08);
+
+  flex-shrink: 0;
+}
+
+
+.help-contact-green {
+  color: #22c55e;
+
+  background: rgba(34, 197, 94, 0.08);
+}
+
+
+.help-contact-label {
+  margin-bottom: 4px;
+
+  color: #71717a;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.8px;
+}
+
+
+.help-contact-value {
+  color: #e4e4e7;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+
+.help-support-note {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 10px;
+
+  margin-top: 15px;
+
+  padding: 13px;
+
+  background: rgba(20, 184, 166, 0.05);
+
+  border: 1px solid rgba(20, 184, 166, 0.14);
+
+  border-radius: 7px;
+
+  color: #85858e;
+
+  font-size: 11px;
+
+  line-height: 1.7;
+}
+
+
+.help-support-note svg {
+  color: #14b8a6;
+
+  flex-shrink: 0;
+
+  margin-top: 2px;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width: 1200px) {
+
+  .help-info-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .help-operations-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+@media (max-width: 850px) {
+
+  .help-bottom-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 650px) {
+
+  .help-main-panel {
+    padding: 17px;
+  }
+
+  .help-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .help-operations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .help-document-row {
+    padding: 0 12px;
+  }
+
+  .help-document-name {
+    font-size: 12px;
+  }
+
+  .help-guide-content {
+    padding: 17px;
+  }
+
+  .help-guide-title {
+    font-size: 14px;
+  }
+
+  .help-guide-description {
+    font-size: 12px;
+  }
+
+  .help-guide-points {
+    font-size: 12px;
+  }
+
+}

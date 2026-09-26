@@ -1,0 +1,223 @@
+.flex-full-height {
+  min-height: calc(100vh - 200px);
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-column-card {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.table-panel {
+  padding: 24px !important;
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-muted);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+}
+
+/* Filter controls bar styling in new UI theme */
+.filter-controls-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.search-input {
+  background: rgba(15, 15, 18, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  flex: 1;
+  max-width: 320px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.search-input:focus {
+  border-color: rgba(20, 184, 166, 0.5);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.filter-select {
+  background: rgba(15, 15, 18, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 180px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-select:focus {
+  border-color: rgba(20, 184, 166, 0.5);
+}
+
+.empty-history {
+  padding: 100px 20px;
+  color: var(--text-secondary);
+}
+
+.flex-grow-center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.empty-history p {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 12px;
+}
+
+.custom-table-scroll {
+  border-radius: 6px;
+  border: 1px solid var(--border-muted);
+  margin-bottom: 20px;
+}
+
+.flex-table-grow {
+  flex: 1;
+  overflow-y: auto;
+  background: rgba(15, 15, 18, 0.3);
+}
+
+.modern-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dynamic-row-height th {
+  padding: 16px 20px !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  background: rgba(15, 15, 18, 0.6);
+}
+
+.table-row-spaced td {
+  padding: 20px 20px !important;
+  font-size: 15px !important;
+  color: #FAFAFA !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
+  vertical-align: middle;
+}
+
+.table-row-spaced:hover td {
+  background: rgba(255, 255, 255, 0.04) !important;
+}
+
+.id-highlight {
+  color: var(--color-danger) !important;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.timestamp-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.date-text {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.time-text {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.squad-text {
+  font-weight: 600;
+  color: var(--text-primary) !important;
+}
+
+.badge-large {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  padding: 4px 12px !important;
+  letter-spacing: 0.06em;
+  border-radius: 4px;
+}
+
+.badge-completed {
+  background: rgba(20, 184, 166, 0.15);
+  color: #2DD4BF;
+  border: 1px solid rgba(20, 184, 166, 0.3);
+  border-radius: 4px;
+}
+
+.badge-pending {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 4px;
+}
+
+.badge-active {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 4px;
+}
+
+.btn-table-action-large {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn-table-action-large:hover {
+  background: var(--border-muted);
+  border-color: rgba(255, 255, 255, 0.18);
+  transform: translateX(1px);
+}
+
+/* Alignments classes */
+.text-left {
+  text-align: left !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+@media (max-width: 768px) {
+  .filter-controls-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .search-input {
+    max-width: 100%;
+  }
+  .filter-select {
+    width: 100%;
+  }
+}

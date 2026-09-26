@@ -1,0 +1,5 @@
+@media (max-width: 1024px) {
+          .prediction-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }

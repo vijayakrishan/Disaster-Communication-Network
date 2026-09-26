@@ -1,0 +1,135 @@
+/* FilterBar Component Styling */
+
+.filter-bar-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 16px;
+  width: 100%;
+}
+
+.filter-bar-left {
+  flex-grow: 1;
+  max-width: 320px;
+}
+
+.filter-bar-search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.filter-bar-search-icon {
+  position: absolute;
+  left: 12px;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.filter-bar-input {
+  padding-left: 36px !important;
+  background: rgba(15, 15, 18, 0.9) !important;
+  border: 1px solid var(--bg-card-hover) !important;
+  color: var(--text-primary) !important;
+  height: 44px !important;
+  width: 100%;
+  border-radius: 6px;
+  font-family: var(--font-sans);
+  font-size: 13px !important;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.filter-bar-input:focus {
+  border-color: #14B8A6 !important;
+  box-shadow: 0 0 0 2px rgba(20, 184, 166, 0.15);
+}
+
+.filter-bar-right {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.filter-bar-date-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.filter-bar-calendar-icon {
+  position: absolute;
+  left: 12px;
+  color: var(--text-muted);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.filter-bar-date-input {
+  padding-left: 36px !important;
+  background: rgba(2, 8, 23, 0.9) !important;
+  border: 1px solid var(--bg-card-hover) !important;
+  color: var(--text-primary) !important;
+  height: 44px !important;
+  width: 150px;
+  border-radius: 6px;
+  font-family: var(--font-sans);
+  font-size: 13px !important;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.filter-bar-date-input:focus {
+  border-color: #14B8A6 !important;
+  box-shadow: 0 0 0 2px rgba(20, 184, 166, 0.15);
+}
+
+.filter-bar-select {
+  background: rgba(2, 8, 23, 0.9) !important;
+  border: 1px solid var(--bg-card-hover) !important;
+  color: var(--text-primary) !important;
+  height: 44px !important;
+  width: 160px;
+  border-radius: 6px;
+  font-family: var(--font-sans);
+  font-size: 13px !important;
+  cursor: pointer;
+  outline: none;
+  padding: 0 12px;
+  transition: all 0.2s ease;
+}
+
+.filter-bar-select:focus {
+  border-color: #14B8A6 !important;
+  box-shadow: 0 0 0 2px rgba(20, 184, 166, 0.15);
+}
+
+/* Tablet view styling */
+@media (max-width: 1024px) {
+  .filter-bar-toolbar {
+    gap: 12px;
+  }
+}
+
+/* Mobile view styling */
+@media (max-width: 768px) {
+  .filter-bar-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .filter-bar-left {
+    max-width: 100%;
+  }
+  .filter-bar-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .filter-bar-date-input,
+  .filter-bar-select {
+    flex: 1;
+    width: 50%;
+  }
+}

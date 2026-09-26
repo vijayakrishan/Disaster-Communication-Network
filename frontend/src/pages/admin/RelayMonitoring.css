@@ -1,0 +1,516 @@
+/* ============================================================
+   RELAY MONITORING TABLE
+   MATCH ADMIN "RECENT SOS HISTORY" TABLE
+============================================================ */
+
+
+/* ============================================================
+   TABLE PANEL
+============================================================ */
+
+.table-panel {
+  width: 100%;
+  box-sizing: border-box;
+
+  background: #18181b;
+
+  border: 1px solid #2f3035;
+  border-radius: 8px;
+
+  padding: 20px;
+}
+
+
+/* ============================================================
+   TABLE CONTAINER
+============================================================ */
+
+.table-panel .modern-table-container {
+  width: 100%;
+
+  overflow-x: auto;
+
+  background: #18181b;
+
+  border: 1px solid #303035;
+  border-radius: 5px;
+}
+
+
+/* ============================================================
+   MAIN TABLE
+============================================================ */
+
+.table-panel table.modern-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  table-layout: auto;
+
+  background: #18181b;
+}
+
+
+/* ============================================================
+   TABLE HEADER
+============================================================ */
+
+.table-panel .modern-table thead {
+  background: #111113;
+}
+
+
+.table-panel .modern-table thead tr {
+  height: 40px;
+}
+
+
+.table-panel .modern-table thead th {
+  height: 40px;
+
+  padding: 0 16px;
+
+  background: #111113;
+
+  border-bottom: 1px solid #303035;
+
+  color: #71717a;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  text-align: left;
+
+  letter-spacing: 0.6px;
+
+  white-space: nowrap;
+
+  vertical-align: middle;
+}
+
+
+/* ============================================================
+   TABLE BODY ROW
+============================================================ */
+
+.table-panel .modern-table tbody tr {
+  height: 53px;
+
+  background: #18181b;
+
+  transition:
+    background 0.15s ease;
+}
+
+
+/* Hover */
+
+.table-panel .modern-table tbody tr:hover,
+.table-panel .modern-table tbody tr.table-row-hoverable:hover {
+  background: #202023;
+}
+
+
+/* ============================================================
+   TABLE CELLS
+============================================================ */
+
+.table-panel .modern-table tbody td {
+  height: 53px;
+
+  padding: 0 16px;
+
+  background: transparent;
+
+  border-bottom: 1px solid #252529;
+
+  color: #a1a1aa;
+
+  font-size: 12px;
+
+  font-weight: 400;
+
+  line-height: 1.5;
+
+  vertical-align: middle;
+
+  white-space: nowrap;
+}
+
+
+/* Last row */
+
+.table-panel .modern-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* ============================================================
+   NODE ID
+============================================================ */
+
+.table-panel .modern-table tbody td.font-mono {
+  color: #a1a1aa;
+
+  font-size: 12px;
+
+  font-weight: 400;
+}
+
+
+/* ============================================================
+   STATION NAME
+============================================================ */
+
+.table-panel .modern-table tbody td.victim-name-cell {
+  color: #e4e4e7;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+
+/* ============================================================
+   SIGNAL METRICS
+============================================================ */
+
+.table-panel .modern-table tbody td .font-bright {
+  color: #a1a1aa;
+
+  font-size: 12px;
+}
+
+
+.table-panel .modern-table tbody td .text-muted {
+  color: #71717a;
+
+  font-size: 12px;
+}
+
+
+/* ============================================================
+   FLEX ALIGN
+============================================================ */
+
+.table-panel .modern-table .flex-align {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 5px;
+}
+
+
+/* ============================================================
+   SIGNAL ICON
+============================================================ */
+
+.table-panel .modern-table td svg {
+  flex-shrink: 0;
+}
+
+
+/* ============================================================
+   BATTERY
+============================================================ */
+
+.table-panel .modern-table td:nth-child(4) {
+  color: #a1a1aa;
+
+  font-size: 12px;
+}
+
+
+.table-panel .modern-table td:nth-child(4) svg {
+  color: #71717a;
+}
+
+
+/* ============================================================
+   PACKET COUNT
+============================================================ */
+
+.table-panel .modern-table td:nth-child(5) {
+  color: #a1a1aa;
+
+  font-size: 12px;
+}
+
+
+/* ============================================================
+   STATUS BADGE
+============================================================ */
+
+.table-panel .modern-table .badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-width: 62px;
+
+  height: 24px;
+
+  box-sizing: border-box;
+
+  padding: 0 9px;
+
+  border-radius: 4px;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+
+  line-height: 1;
+
+  white-space: nowrap;
+}
+
+
+/* ============================================================
+   OFFLINE
+============================================================ */
+
+.table-panel .modern-table .badge-offline {
+  color: #ef4444;
+
+  background: rgba(239, 68, 68, 0.08);
+
+  border: 1px solid rgba(239, 68, 68, 0.35);
+}
+
+
+/* ============================================================
+   ONLINE
+============================================================ */
+
+.table-panel .modern-table .badge-online {
+  color: #14b8a6;
+
+  background: rgba(20, 184, 166, 0.08);
+
+  border: 1px solid rgba(20, 184, 166, 0.35);
+}
+
+
+/* ============================================================
+   UNKNOWN
+============================================================ */
+
+.table-panel .modern-table .badge-unknown {
+  color: #a1a1aa;
+
+  background: rgba(161, 161, 170, 0.08);
+
+  border: 1px solid rgba(161, 161, 170, 0.25);
+}
+
+
+/* ============================================================
+   BADGE LARGE
+============================================================ */
+
+.table-panel .modern-table .badge-large {
+  min-width: 62px;
+
+  height: 24px;
+}
+
+
+/* ============================================================
+   EMPTY TABLE
+============================================================ */
+
+.table-panel .modern-table tbody td[colspan] {
+  padding: 35px 16px;
+
+  color: #71717a;
+
+  font-size: 13px;
+
+  text-align: center;
+}
+
+
+/* ============================================================
+   PAGINATION AREA
+============================================================ */
+
+.table-panel .pagination-wrapper {
+  min-height: 50px;
+
+  padding-top: 16px;
+}
+
+
+/* Left side */
+
+.table-panel .pagination-info {
+  color: #71717a;
+
+  font-size: 11px;
+}
+
+
+/* Rows label */
+
+.table-panel .rows-label {
+  color: #71717a;
+
+  font-size: 11px;
+}
+
+
+/* Rows selector */
+
+.table-panel .rows-selector {
+  height: 27px;
+
+  padding: 0 8px;
+
+  background: #111113;
+
+  border: 1px solid #303035;
+
+  border-radius: 4px;
+
+  color: #d4d4d8;
+
+  font-size: 11px;
+
+  outline: none;
+
+  cursor: pointer;
+}
+
+
+/* ============================================================
+   PAGINATION BUTTONS
+============================================================ */
+
+.table-panel .pagination-btn,
+.table-panel .page-num-btn {
+  min-width: 30px;
+
+  height: 30px;
+
+  padding: 0 9px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #18181b;
+
+  border: 1px solid #2f3035;
+
+  border-radius: 5px;
+
+  color: #71717a;
+
+  font-size: 11px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+
+.table-panel .pagination-btn:hover:not(:disabled),
+.table-panel .page-num-btn:hover {
+  background: #202023;
+
+  color: #d4d4d8;
+
+  border-color: #3f4047;
+}
+
+
+/* Disabled */
+
+.table-panel .pagination-btn:disabled,
+.table-panel .disabled-btn {
+  opacity: 0.4;
+
+  cursor: not-allowed;
+}
+
+
+/* Active page */
+
+.table-panel .active-page-btn {
+  background: rgba(20, 184, 166, 0.12);
+
+  border-color: #14b8a6;
+
+  color: #14b8a6;
+}
+
+
+/* ============================================================
+   PAGINATION SPACING
+============================================================ */
+
+.table-panel .pagination-left,
+.table-panel .pagination-right,
+.table-panel .rows-per-page,
+.table-panel .page-numbers-row {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width: 900px) {
+
+  .table-panel {
+    padding: 15px;
+  }
+
+  .table-panel .modern-table {
+    min-width: 800px;
+  }
+
+  .table-panel .modern-table-container {
+    overflow-x: auto;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .table-panel {
+    padding: 12px;
+  }
+
+  .table-panel .modern-table thead th {
+    padding: 0 12px;
+
+    font-size: 10px;
+  }
+
+  .table-panel .modern-table tbody td {
+    padding: 0 12px;
+
+    font-size: 11px;
+  }
+
+}

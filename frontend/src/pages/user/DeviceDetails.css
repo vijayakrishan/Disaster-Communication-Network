@@ -1,0 +1,182 @@
+.header-selector {
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-card);
+}
+
+.header-selector h3 {
+  font-size: 16px;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.font-bold-label {
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.select-custom {
+  background: rgba(15, 15, 18, 0.9);
+  border: 1px solid var(--border-glow);
+  color: var(--text-primary);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+}
+
+.select-custom:focus {
+  border-color: var(--accent-glow);
+}
+
+.telemetry-metrics-grid {
+  margin-top: 12px;
+  gap: 28px !important;
+}
+
+.enlarged-card {
+  padding: 28px !important;
+  background: var(--bg-card) !important;
+  border-radius: 6px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid var(--border-muted);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.metric-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-muted);
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+.metric-header h4 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-primary) !important;
+}
+
+.badge-bright {
+  font-weight: 700 !important;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  font-size: 10px;
+  border-radius: 4px;
+}
+
+.metric-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.primary-value {
+  font-size: 34px !important;
+  font-weight: 800;
+  color: var(--text-primary) !important;
+  font-family: var(--font-mono);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.large-progress-bar {
+  height: 10px !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-radius: 4px;
+}
+
+.fill-success {
+  background: #22c55e !important;
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.4);
+}
+
+.brighter-sub {
+  font-size: 11px !important;
+  color: var(--text-secondary) !important;
+  font-weight: 500;
+}
+
+.larger-signal-bars {
+  height: 24px !important;
+  gap: 6px !important;
+}
+
+.larger-signal-bars .signal-bar {
+  width: 6px !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+}
+
+.larger-signal-bars .signal-bar:nth-child(1) { height: 6px; }
+.larger-signal-bars .signal-bar:nth-child(2) { height: 10px; }
+.larger-signal-bars .signal-bar:nth-child(3) { height: 14px; }
+.larger-signal-bars .signal-bar:nth-child(4) { height: 18px; }
+.larger-signal-bars .signal-bar:nth-child(5) { height: 24px; }
+
+.larger-signal-bars .active-bar {
+  background: var(--accent-primary) !important;
+  box-shadow: 0 0 8px var(--accent-primary) !important;
+}
+
+.large-gps-row {
+  padding-bottom: 8px !important;
+  margin-bottom: 4px;
+}
+
+.val-highlight {
+  color: var(--text-primary) !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+}
+
+.enlarged-specs-card {
+  padding: 28px !important;
+  background: var(--bg-card) !important;
+  border-radius: 6px;
+  margin-top: 12px;
+}
+
+.enlarged-specs-card .panel-header {
+  border-bottom: 1px solid var(--border-muted) !important;
+  padding-bottom: 16px !important;
+  margin-bottom: 20px !important;
+}
+
+.enlarged-specs-card h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.larger-specs-flex {
+  gap: 24px !important;
+}
+
+.spec-box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.spec-box .label {
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+.highlight-spec {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: var(--text-primary) !important;
+}

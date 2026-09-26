@@ -1,0 +1,1101 @@
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+.landing-page {
+  min-height: 100vh;
+  width: 100%;
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(0, 255, 170, 0.07),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(0, 160, 255, 0.06),
+      transparent 30%
+    ),
+    #07100e;
+
+  color: #e8f5f1;
+
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px;
+
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   BACKGROUND GRID
+===================================================== */
+
+.auth-background-grid {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    );
+
+  background-size: 40px 40px;
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   MAIN CONTAINER
+===================================================== */
+
+.auth-container {
+  width: 100%;
+  max-width: 1180px;
+
+  min-height: 680px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    480px;
+
+  gap: 70px;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+
+/* =====================================================
+   BRAND SECTION
+===================================================== */
+
+.brand-section {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  padding:
+    15px
+    0
+    25px
+    10px;
+}
+
+
+/* =====================================================
+   BRAND LOGO
+===================================================== */
+
+.brand-logo {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+}
+
+.logo-box {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    rgba(0, 255, 170, 0.08);
+
+  border:
+    1px solid
+    rgba(0, 255, 170, 0.35);
+
+  color: #39f5b2;
+
+  box-shadow:
+    0 0 25px
+    rgba(0, 255, 170, 0.08);
+}
+
+.brand-name {
+  font-size: 21px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  color: #f1faf7;
+}
+
+.brand-subtitle {
+  margin-top: 3px;
+
+  font-size: 9px;
+
+  letter-spacing: 1.7px;
+
+  color: #6f8b83;
+}
+
+
+/* =====================================================
+   BRAND CONTENT
+===================================================== */
+
+.brand-content {
+  max-width: 590px;
+
+  margin-top: 40px;
+}
+
+.status-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding:
+    7px
+    11px;
+
+  border-radius: 5px;
+
+  border:
+    1px solid
+    rgba(57, 245, 178, 0.2);
+
+  background:
+    rgba(57, 245, 178, 0.04);
+
+  color: #6ce8bc;
+
+  font-size: 10px;
+
+  letter-spacing: 1.5px;
+
+  font-weight: 700;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #39f5b2;
+
+  box-shadow:
+    0 0 10px
+    rgba(57, 245, 178, 0.8);
+}
+
+.brand-content h1 {
+  margin:
+    24px
+    0
+    18px;
+
+  font-size:
+    clamp(42px, 5vw, 67px);
+
+  line-height: 0.98;
+
+  letter-spacing: -2px;
+
+  font-weight: 800;
+}
+
+.brand-content h1 span {
+  color: #39f5b2;
+}
+
+.brand-content p {
+  max-width: 520px;
+
+  color: #829b94;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+
+  margin: 0;
+}
+
+
+/* =====================================================
+   TELEMETRY
+===================================================== */
+
+.telemetry-box {
+  width: 100%;
+  max-width: 460px;
+
+  padding: 20px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.07);
+
+  background:
+    rgba(255, 255, 255, 0.025);
+
+  border-radius: 8px;
+}
+
+.telemetry-title {
+  font-size: 9px;
+
+  color: #627a73;
+
+  letter-spacing: 1.7px;
+
+  margin-bottom: 15px;
+}
+
+.telemetry-row {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 8px 0;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.045);
+
+  font-size: 10px;
+}
+
+.telemetry-row span {
+  color: #718981;
+
+  letter-spacing: 1px;
+}
+
+.telemetry-row strong {
+  color: #45e6ad;
+
+  font-size: 9px;
+
+  letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   AUTH CARD
+===================================================== */
+
+.auth-card {
+  width: 100%;
+
+  background:
+    rgba(11, 22, 19, 0.92);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 30px 80px
+    rgba(0, 0, 0, 0.35);
+
+  backdrop-filter: blur(18px);
+
+  align-self: center;
+}
+
+.auth-card-inner {
+  padding: 38px 38px 24px;
+}
+
+
+/* =====================================================
+   AUTH HEADER
+===================================================== */
+
+.auth-header {
+  margin-bottom: 28px;
+}
+
+.auth-kicker {
+  color: #39f5b2;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.8px;
+}
+
+.auth-header h2 {
+  margin:
+    8px
+    0
+    7px;
+
+  font-size: 28px;
+
+  color: #f2faf7;
+
+  font-weight: 750;
+
+  letter-spacing: -0.5px;
+}
+
+.auth-header p {
+  margin: 0;
+
+  color: #738d85;
+
+  font-size: 12px;
+}
+
+
+/* =====================================================
+   REGISTER HEADING
+===================================================== */
+
+.register-heading {
+  margin-bottom: 22px;
+
+  text-align: center;
+}
+
+.register-heading h2 {
+  margin: 0 0 8px;
+
+  font-size: 21px;
+
+  color: #eef9f5;
+}
+
+.register-heading p {
+  margin: 0;
+
+  color: #718a82;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+.register-heading strong {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #39f5b2;
+
+  font-size: 12px;
+
+  word-break: break-all;
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.auth-form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+.input-group {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.input-label {
+  color: #718b83;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.3px;
+}
+
+.input-with-icon {
+  position: relative;
+
+  width: 100%;
+}
+
+.field-icon {
+  position: absolute;
+
+  left: 14px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #59736a;
+
+  pointer-events: none;
+}
+
+.input-control {
+  width: 100%;
+
+  height: 45px;
+
+  padding:
+    0
+    42px;
+
+  border-radius: 6px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.09);
+
+  background:
+    rgba(255, 255, 255, 0.035);
+
+  color: #edf8f4;
+
+  outline: none;
+
+  font-size: 12px;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.input-control::placeholder {
+  color: #50665f;
+}
+
+.input-control:focus {
+  border-color:
+    rgba(57, 245, 178, 0.55);
+
+  background:
+    rgba(57, 245, 178, 0.025);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(57, 245, 178, 0.05);
+}
+
+
+/* =====================================================
+   PASSWORD TOGGLE
+===================================================== */
+
+.password-toggle {
+  position: absolute;
+
+  right: 12px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  border: none;
+
+  background: transparent;
+
+  color: #627a72;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 4px;
+}
+
+.password-toggle:hover {
+  color: #39f5b2;
+}
+
+
+/* =====================================================
+   FORM ROW
+===================================================== */
+
+.form-row-flex {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-top: -2px;
+}
+
+.checkbox-label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: #718981;
+
+  font-size: 10px;
+
+  cursor: pointer;
+}
+
+.checkbox-label input {
+  width: 13px;
+  height: 13px;
+
+  accent-color: #39f5b2;
+
+  cursor: pointer;
+}
+
+.forgot-link {
+  border: none;
+
+  background: none;
+
+  padding: 0;
+
+  color: #39dba1;
+
+  font-size: 10px;
+
+  cursor: pointer;
+}
+
+.forgot-link:hover {
+  color: #70f6c4;
+}
+
+
+/* =====================================================
+   PRIMARY BUTTON
+===================================================== */
+
+.btn-primary {
+  width: 100%;
+
+  height: 46px;
+
+  border: none;
+
+  border-radius: 6px;
+
+  background:
+    #39dca4;
+
+  color: #06110d;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.7px;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.btn-primary:hover {
+  background: #57edb7;
+
+  box-shadow:
+    0 8px 25px
+    rgba(57, 220, 164, 0.18);
+
+  transform: translateY(-1px);
+}
+
+.btn-primary:disabled {
+  opacity: 0.55;
+
+  cursor: not-allowed;
+
+  transform: none;
+
+  box-shadow: none;
+}
+
+
+/* =====================================================
+   GOOGLE BUTTON
+===================================================== */
+
+.google-btn {
+  width: 100%;
+
+  height: 44px;
+
+  border-radius: 6px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+
+  background:
+    rgba(255, 255, 255, 0.035);
+
+  color: #dce9e5;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  font-size: 11px;
+
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.google-btn:hover {
+  background:
+    rgba(255, 255, 255, 0.06);
+
+  border-color:
+    rgba(255, 255, 255, 0.18);
+}
+
+.google-btn svg {
+  color: #ffffff;
+}
+
+
+/* =====================================================
+   DIVIDER
+===================================================== */
+
+.auth-divider {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin:
+    20px
+    0;
+}
+
+.auth-divider span {
+  flex: 1;
+
+  height: 1px;
+
+  background:
+    rgba(255, 255, 255, 0.07);
+}
+
+.auth-divider p {
+  margin: 0;
+
+  color: #526961;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   CREATE ACCOUNT
+===================================================== */
+
+.create-account {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 6px;
+
+  margin-top: 20px;
+
+  font-size: 10px;
+
+  color: #637a73;
+}
+
+.create-account button {
+  border: none;
+
+  background: transparent;
+
+  color: #39e0a5;
+
+  cursor: pointer;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  padding: 0;
+}
+
+.create-account button:hover {
+  color: #6df4bf;
+}
+
+
+/* =====================================================
+   BACK LOGIN
+===================================================== */
+
+.back-login-btn {
+  width: 100%;
+
+  border: none;
+
+  background: transparent;
+
+  color: #6f8981;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 7px;
+
+  font-size: 10px;
+
+  cursor: pointer;
+
+  margin-top: 20px;
+
+  padding: 5px;
+}
+
+.back-login-btn:hover {
+  color: #39e0a5;
+}
+
+
+/* =====================================================
+   VERIFY ICON
+===================================================== */
+
+.verify-icon {
+  width: 54px;
+  height: 54px;
+
+  border-radius: 50%;
+
+  margin:
+    0
+    auto
+    18px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #39f5b2;
+
+  background:
+    rgba(57, 245, 178, 0.08);
+
+  border:
+    1px solid
+    rgba(57, 245, 178, 0.2);
+}
+
+
+/* =====================================================
+   OTP
+===================================================== */
+
+.otp-input {
+  text-align: center;
+
+  letter-spacing: 7px;
+
+  font-size: 18px;
+
+  font-weight: 700;
+
+  padding-left: 48px;
+}
+
+
+/* =====================================================
+   VERIFY HELP
+===================================================== */
+
+.verify-help {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 6px;
+
+  margin-top: 18px;
+
+  font-size: 10px;
+
+  color: #647c75;
+}
+
+.verify-help button {
+  border: none;
+
+  background: transparent;
+
+  color: #39dfa4;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  padding: 0;
+}
+
+.verify-help button:hover {
+  color: #6df4c0;
+}
+
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.login-error {
+  padding:
+    10px
+    12px;
+
+  border-radius: 5px;
+
+  border:
+    1px solid
+    rgba(255, 75, 75, 0.2);
+
+  background:
+    rgba(255, 75, 75, 0.06);
+
+  color: #ff8888;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+}
+
+
+/* =====================================================
+   SUCCESS
+===================================================== */
+
+.login-success {
+  padding:
+    10px
+    12px;
+
+  border-radius: 5px;
+
+  border:
+    1px solid
+    rgba(57, 245, 178, 0.2);
+
+  background:
+    rgba(57, 245, 178, 0.05);
+
+  color: #65eeb8;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+
+/* =====================================================
+   SYSTEM FOOTER
+===================================================== */
+
+.system-footer {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-top: 28px;
+
+  padding-top: 17px;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.055);
+
+  color: #4e645d;
+
+  font-size: 8px;
+
+  letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 950px) {
+
+  .landing-page {
+    padding: 25px;
+  }
+
+  .auth-container {
+    grid-template-columns: 1fr;
+
+    max-width: 520px;
+
+    gap: 35px;
+  }
+
+  .brand-section {
+    min-height: auto;
+
+    gap: 30px;
+  }
+
+  .brand-content {
+    margin-top: 20px;
+  }
+
+  .telemetry-box {
+    display: none;
+  }
+
+  .brand-content h1 {
+    font-size: 42px;
+  }
+}
+
+
+@media (max-width: 560px) {
+
+  .landing-page {
+    padding: 15px;
+  }
+
+  .auth-card-inner {
+    padding:
+      28px
+      22px
+      20px;
+  }
+
+  .brand-section {
+    padding: 5px;
+  }
+
+  .brand-content h1 {
+    font-size: 36px;
+  }
+
+  .brand-content p {
+    font-size: 12px;
+  }
+
+  .form-row-flex {
+    align-items: flex-start;
+
+    gap: 10px;
+  }
+
+  .auth-header h2 {
+    font-size: 25px;
+  }
+
+  .system-footer {
+    font-size: 7px;
+  }
+}

@@ -1,0 +1,924 @@
+/* ============================================================
+   RESQMESH
+   SOS / DISPATCH TABLE STYLES
+   ADMIN DASHBOARD STYLE
+============================================================ */
+
+
+/* ============================================================
+   FILTER ROW
+============================================================ */
+
+.filter-row-card {
+  padding: 14px 18px !important;
+
+  background: #18181b !important;
+
+  border: 1px solid #2f3035;
+
+  border-radius: 6px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 16px;
+
+  gap: 16px;
+
+  box-sizing: border-box;
+}
+
+
+/* ============================================================
+   FILTER LEFT
+============================================================ */
+
+.filter-left-col {
+  flex-grow: 1;
+
+  max-width: 300px;
+}
+
+
+.search-input-box {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  width: 100%;
+}
+
+
+.filter-search-icon {
+  position: absolute;
+
+  left: 11px;
+
+  color: #71717a;
+
+  width: 14px;
+
+  height: 14px;
+
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+
+.filter-input-field {
+  width: 100%;
+
+  height: 36px;
+
+  box-sizing: border-box;
+
+  padding: 0 12px 0 34px !important;
+
+  background: #111113 !important;
+
+  border: 1px solid #303035 !important;
+
+  border-radius: 5px;
+
+  color: #e4e4e7 !important;
+
+  font-size: 12px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.filter-input-field::placeholder {
+  color: #52525b;
+}
+
+
+.filter-input-field:focus {
+  background: #141416 !important;
+
+  border-color: rgba(20, 184, 166, 0.45) !important;
+}
+
+
+/* ============================================================
+   FILTER RIGHT
+============================================================ */
+
+.filter-right-col {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+/* ============================================================
+   DATE
+============================================================ */
+
+.filter-date-box {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+}
+
+
+.filter-calendar-icon {
+  position: absolute;
+
+  left: 10px;
+
+  width: 13px;
+
+  height: 13px;
+
+  color: #71717a;
+
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+
+.filter-date-field {
+  width: 145px;
+
+  height: 36px;
+
+  box-sizing: border-box;
+
+  padding: 0 10px 0 32px !important;
+
+  background: #111113 !important;
+
+  border: 1px solid #303035 !important;
+
+  border-radius: 5px;
+
+  color: #d4d4d8 !important;
+
+  font-size: 11px;
+
+  outline: none;
+}
+
+
+.filter-date-field:focus {
+  border-color: rgba(20, 184, 166, 0.45) !important;
+}
+
+
+/* ============================================================
+   TEAM SELECT
+============================================================ */
+
+.filter-select-dropdown {
+  width: 155px;
+
+  height: 36px;
+
+  box-sizing: border-box;
+
+  padding: 0 10px;
+
+  background: #111113 !important;
+
+  border: 1px solid #303035 !important;
+
+  border-radius: 5px;
+
+  color: #d4d4d8 !important;
+
+  font-size: 11px;
+
+  cursor: pointer;
+
+  outline: none;
+}
+
+
+.filter-select-dropdown:focus {
+  border-color: rgba(20, 184, 166, 0.45) !important;
+}
+
+
+/* ============================================================
+   TABLE PANEL
+============================================================ */
+
+.table-panel-full {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 20px !important;
+
+  background: #18181b !important;
+
+  border: 1px solid #2f3035;
+
+  border-radius: 6px;
+
+  box-shadow: none;
+}
+
+
+/* ============================================================
+   TABLE SCROLL
+============================================================ */
+
+.custom-table-scroll {
+  width: 100%;
+
+  border: 1px solid #303035;
+
+  border-radius: 5px;
+
+  overflow-x: auto;
+
+  overflow-y: hidden;
+
+  box-sizing: border-box;
+}
+
+
+/* ============================================================
+   TABLE
+============================================================ */
+
+.full-width-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  border-spacing: 0;
+
+  background: #18181b;
+
+  table-layout: auto;
+}
+
+
+/* ============================================================
+   TABLE HEADER
+============================================================ */
+
+.full-width-table thead {
+  background: #111113;
+}
+
+
+.full-width-table th {
+  height: 40px;
+
+  padding: 0 16px !important;
+
+  background: #111113;
+
+  color: #71717a !important;
+
+  border-bottom: 1px solid #303035;
+
+  font-size: 10px !important;
+
+  font-weight: 700 !important;
+
+  letter-spacing: 0.65px;
+
+  text-align: left;
+
+  vertical-align: middle;
+
+  white-space: nowrap;
+}
+
+
+/* ============================================================
+   TABLE ROW
+============================================================ */
+
+.table-row-hoverable {
+  height: 51px;
+
+  background: #18181b;
+
+  transition: background 0.15s ease;
+}
+
+
+.table-row-hoverable td {
+  height: 51px;
+
+  padding: 0 16px !important;
+
+  background: transparent;
+
+  color: #a1a1aa !important;
+
+  border-bottom: 1px solid #252529 !important;
+
+  font-size: 12px !important;
+
+  font-weight: 400;
+
+  line-height: 1.4;
+
+  vertical-align: middle;
+
+  white-space: nowrap;
+}
+
+
+/* ============================================================
+   LAST ROW
+============================================================ */
+
+.table-row-hoverable:last-child td {
+  border-bottom: none !important;
+}
+
+
+/* ============================================================
+   HOVER
+============================================================ */
+
+.table-row-hoverable:hover {
+  background: #202023;
+}
+
+
+.table-row-hoverable:hover td {
+  background: #202023 !important;
+
+  color: #d4d4d8 !important;
+}
+
+
+/* ============================================================
+   SOS ID
+============================================================ */
+
+.id-highlight {
+  color: #ef4444 !important;
+
+  font-size: 12px !important;
+
+  font-weight: 700;
+}
+
+
+/* ============================================================
+   WORKER / VICTIM
+============================================================ */
+
+.worker-cell {
+  color: #e4e4e7 !important;
+
+  font-size: 12px !important;
+
+  font-weight: 600;
+}
+
+
+/* ============================================================
+   TEAM
+============================================================ */
+
+.team-cell {
+  color: #e4e4e7 !important;
+
+  font-size: 12px !important;
+
+  font-weight: 600;
+}
+
+
+/* ============================================================
+   MESSAGE
+============================================================ */
+
+.msg-text-cell {
+  color: #a1a1aa !important;
+
+  font-size: 12px !important;
+
+  line-height: 1.5;
+}
+
+
+/* ============================================================
+   TIME
+============================================================ */
+
+.time-cell {
+  color: #a1a1aa !important;
+
+  font-size: 12px !important;
+}
+
+
+/* ============================================================
+   TEXT HELPERS
+============================================================ */
+
+.font-bright {
+  color: #e4e4e7;
+}
+
+
+.text-muted {
+  color: #71717a;
+}
+
+
+.font-mono {
+  font-family:
+    'SFMono-Regular',
+    Consolas,
+    'Liberation Mono',
+    monospace;
+}
+
+
+/* ============================================================
+   FLEX ALIGN
+============================================================ */
+
+.flex-align {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 5px;
+}
+
+
+/* ============================================================
+   STATUS BADGES
+============================================================ */
+
+.badge-large {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-width: 58px;
+
+  height: 23px;
+
+  box-sizing: border-box;
+
+  padding: 0 9px !important;
+
+  border-radius: 4px;
+
+  font-size: 9px !important;
+
+  font-weight: 700 !important;
+
+  letter-spacing: 0.6px;
+
+  line-height: 1;
+
+  white-space: nowrap;
+}
+
+
+/* ============================================================
+   COMPLETED
+============================================================ */
+
+.badge-completed {
+  background: rgba(20, 184, 166, 0.08);
+
+  color: #2dd4bf;
+
+  border: 1px solid rgba(20, 184, 166, 0.35);
+}
+
+
+/* ============================================================
+   PENDING
+============================================================ */
+
+.badge-pending {
+  background: rgba(245, 158, 11, 0.08);
+
+  color: #ffa200;
+
+  border: 1px solid rgba(245, 158, 11, 0.35);
+}
+
+
+/* ============================================================
+   ACTIVE
+============================================================ */
+
+.badge-active {
+  background: rgba(239, 68, 68, 0.08);
+
+  color: #ef4444;
+
+  border: 1px solid rgba(239, 68, 68, 0.35);
+}
+
+
+/* ============================================================
+   OFFLINE
+============================================================ */
+
+.badge-offline {
+  background: rgba(239, 68, 68, 0.08);
+
+  color: #ef4444;
+
+  border: 1px solid rgba(239, 68, 68, 0.35);
+}
+
+
+/* ============================================================
+   ONLINE
+============================================================ */
+
+.badge-online {
+  background: rgba(20, 184, 166, 0.08);
+
+  color: #2dd4bf;
+
+  border: 1px solid rgba(20, 184, 166, 0.35);
+}
+
+
+/* ============================================================
+   PAGINATION WRAPPER
+============================================================ */
+
+.pagination-wrapper {
+  width: 100%;
+
+  min-height: 48px;
+
+  margin-top: 0;
+
+  padding-top: 15px;
+
+  box-sizing: border-box;
+
+  border-top: 1px solid #2f3035;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+
+/* ============================================================
+   PAGINATION INFO
+============================================================ */
+
+.pagination-info {
+  color: #71717a;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+
+  white-space: nowrap;
+}
+
+
+/* ============================================================
+   ROWS PER PAGE
+============================================================ */
+
+.rows-per-page {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-left: 14px;
+}
+
+
+.rows-label {
+  color: #71717a;
+
+  font-size: 11px;
+
+  white-space: nowrap;
+}
+
+
+.rows-selector {
+  height: 27px;
+
+  min-width: 43px;
+
+  padding: 0 7px;
+
+  background: #111113;
+
+  border: 1px solid #303035;
+
+  border-radius: 4px;
+
+  color: #d4d4d8;
+
+  font-size: 11px;
+
+  outline: none;
+
+  cursor: pointer;
+}
+
+
+.rows-selector:focus {
+  border-color: rgba(20, 184, 166, 0.4);
+}
+
+
+/* ============================================================
+   PAGINATION BUTTON
+============================================================ */
+
+.pagination-btn {
+  height: 30px;
+
+  min-width: 30px;
+
+  padding: 0 11px;
+
+  box-sizing: border-box;
+
+  background: #18181b;
+
+  border: 1px solid #2f3035;
+
+  border-radius: 5px;
+
+  color: #71717a;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 5px;
+
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+
+.pagination-btn:hover:not(:disabled) {
+  background: #202023;
+
+  border-color: #414147;
+
+  color: #d4d4d8;
+}
+
+
+.pagination-btn:disabled {
+  opacity: 0.35;
+
+  cursor: not-allowed;
+}
+
+
+/* ============================================================
+   DISABLED
+============================================================ */
+
+.disabled-btn {
+  opacity: 0.35;
+
+  cursor: not-allowed;
+}
+
+
+/* ============================================================
+   PAGE NUMBERS
+============================================================ */
+
+.page-numbers-row {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+}
+
+
+.page-num-btn {
+  width: 30px;
+
+  height: 30px;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+  background: transparent;
+
+  border: 1px solid transparent;
+
+  border-radius: 5px;
+
+  color: #71717a;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+
+.page-num-btn:hover {
+  background: #202023;
+
+  border-color: #303035;
+
+  color: #d4d4d8;
+}
+
+
+/* ============================================================
+   ACTIVE PAGE
+============================================================ */
+
+.active-page-btn {
+  color: #14b8a6 !important;
+
+  background: rgba(20, 184, 166, 0.10) !important;
+
+  border: 1px solid rgba(20, 184, 166, 0.40) !important;
+}
+
+
+/* ============================================================
+   PAGINATION LEFT / RIGHT
+============================================================ */
+
+.pagination-left {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+}
+
+
+.pagination-right {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+}
+
+
+/* ============================================================
+   EMPTY TABLE
+============================================================ */
+
+.full-width-table tbody td[colspan] {
+  height: 100px;
+
+  padding: 20px !important;
+
+  color: #71717a !important;
+
+  font-size: 12px !important;
+
+  text-align: center;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width: 1000px) {
+
+  .filter-row-card {
+    flex-wrap: wrap;
+  }
+
+  .filter-left-col {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .filter-right-col {
+    width: 100%;
+
+    justify-content: flex-end;
+  }
+
+  .full-width-table {
+    min-width: 850px;
+  }
+
+  .custom-table-scroll {
+    overflow-x: auto;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .table-panel-full {
+    padding: 15px !important;
+  }
+
+  .filter-right-col {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .filter-date-field,
+  .filter-select-dropdown {
+    width: 100%;
+  }
+
+  .pagination-wrapper {
+    flex-wrap: wrap;
+
+    justify-content: flex-start;
+  }
+
+}
+
+
+@media (max-width: 500px) {
+
+  .filter-row-card {
+    padding: 13px !important;
+  }
+
+  .table-panel-full {
+    padding: 12px !important;
+  }
+
+  .full-width-table th {
+    padding: 0 12px !important;
+
+    font-size: 9px !important;
+  }
+
+  .table-row-hoverable td {
+    padding: 0 12px !important;
+
+    font-size: 11px !important;
+  }
+
+  .pagination-left {
+    flex-wrap: wrap;
+  }
+
+}

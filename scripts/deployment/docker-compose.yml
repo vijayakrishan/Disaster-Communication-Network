@@ -1,0 +1,115 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: resqmesh-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-root}
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+    networks:
+      - resqmesh-net
+
+  auth-service:
+    build:
+      context: ../../backend/auth-service
+    container_name: resqmesh-auth
+    ports:
+      - "8081:8081"
+    environment:
+      DB_URL: jdbc:mysql://mysql:3306/auth_db?useSSL=false&allowPublicKeyRetrieval=true
+      DB_USERNAME: root
+      DB_PASSWORD: ${DB_PASSWORD:-root}
+      RESEND_API_KEY: ${RESEND_API_KEY:-}
+    depends_on:
+      - mysql
+    networks:
+      - resqmesh-net
+
+  device-service:
+    build:
+      context: ../../backend/device-service
+    container_name: resqmesh-device
+    ports:
+      - "8082:8082"
+    environment:
+      DB_URL: jdbc:mysql://mysql:3306/lora_device_db?useSSL=false&allowPublicKeyRetrieval=true
+      DB_USERNAME: root
+      DB_PASSWORD: ${DB_PASSWORD:-root}
+    depends_on:
+      - mysql
+    networks:
+      - resqmesh-net
+
+  user-service:
+    build:
+      context: ../../backend/user-service
+    container_name: resqmesh-user
+    ports:
+      - "8083:8083"
+    environment:
+      DB_URL: jdbc:mysql://mysql:3306/lora_user_db?useSSL=false&allowPublicKeyRetrieval=true
+      DB_USERNAME: root
+      DB_PASSWORD: ${DB_PASSWORD:-root}
+    depends_on:
+      - mysql
+    networks:
+      - resqmesh-net
+
+  base-station-service:
+    build:
+      context: ../../backend/base-station-service
+    container_name: resqmesh-station
+    ports:
+      - "8084:8084"
+    environment:
+      DB_URL: jdbc:mysql://mysql:3306/lora_station_db?useSSL=false&allowPublicKeyRetrieval=true
+      DB_USERNAME: root
+      DB_PASSWORD: ${DB_PASSWORD:-root}
+    depends_on:
+      - mysql
+    networks:
+      - resqmesh-net
+
+  sos-service:
+    build:
+      context: ../../backend/sos-service
+    container_name: resqmesh-sos
+    ports:
+      - "8085:8085"
+    environment:
+      DB_URL: jdbc:mysql://mysql:3306/rescue_db?useSSL=false&allowPublicKeyRetrieval=true
+      DB_USERNAME: root
+      DB_PASSWORD: ${DB_PASSWORD:-root}
+    depends_on:
+      - mysql
+    networks:
+      - resqmesh-net
+
+  rescue-service:
+    build:
+      context: ../../backend/rescue-service
+    container_name: resqmesh-rescue
+    ports:
+      - "8086:8086"
+    environment:
+      DB_URL: jdbc:mysql://mysql:3306/rescue_db?useSSL=false&allowPublicKeyRetrieval=true
+      DB_USERNAME: root
+      DB_PASSWORD: ${DB_PASSWORD:-root}
+      AUTH_SERVICE_URL: http://auth-service:8081
+    depends_on:
+      - mysql
+      - auth-service
+    networks:
+      - resqmesh-net
+
+volumes:
+  mysql_data:
+
+networks:
+  resqmesh-net:
+    driver: bridge
