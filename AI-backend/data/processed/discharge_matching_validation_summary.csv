@@ -1,0 +1,11 @@
+metric,value
+total_rows,1885974.0
+rows_with_discharge,1589262.0
+rows_without_discharge,296712.0
+discharge_match_rate_percent,84.27
+flood_event_discharge_coverage_percent,85.71
+mean_station_distance_km,23.12
+median_station_distance_km,19.72
+max_station_distance_km,53.89
+rows_over_50km,49662.0
+unique_matched_stations,28.0

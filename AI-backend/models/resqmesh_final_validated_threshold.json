@@ -1,0 +1,21 @@
+{
+  "selected_threshold": 0.5,
+  "selection_method": "Maximum validation F1; balanced accuracy used as tie-breaker",
+  "threshold_selection_event": "2021",
+  "final_test_event": "2023",
+  "calendar_features_used": false,
+  "demonstration_thresholds": {
+    "SAFE": [
+      0.0,
+      0.35
+    ],
+    "WARNING": [
+      0.35,
+      0.5
+    ],
+    "DANGER": [
+      0.5,
+      1.0
+    ]
+  }
+}

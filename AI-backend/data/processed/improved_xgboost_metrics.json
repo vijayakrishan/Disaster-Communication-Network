@@ -1,0 +1,18 @@
+{
+  "accuracy": 0.75,
+  "balanced_accuracy": 0.5,
+  "precision": 0.0,
+  "recall": 0.0,
+  "f1": 0.0,
+  "roc_auc": 0.832690329218107,
+  "pr_auc": 0.462787436065214,
+  "threshold": 0.5,
+  "train_rows": 10944,
+  "test_rows": 1152,
+  "train_flood_rows": 2736,
+  "train_normal_rows": 8208,
+  "test_flood_rows": 288,
+  "test_normal_rows": 864,
+  "scale_pos_weight": 3.0,
+  "num_features": 35
+}

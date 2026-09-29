@@ -1,0 +1,12 @@
+RESQMESH XGBOOST EVALUATION
+============================================================
+
+Accuracy: 0.5300
+Balanced Accuracy: 0.4648
+Macro Precision: 0.5149
+Macro Recall: 0.4648
+Macro F1: 0.4511
+Weighted F1: 0.5280
+DANGER Precision: 0.4828
+DANGER Recall: 0.1707
+DANGER F1: 0.2523

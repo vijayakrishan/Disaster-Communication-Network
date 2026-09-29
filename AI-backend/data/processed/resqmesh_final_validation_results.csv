@@ -1,0 +1,2 @@
+model,training_event,test_event,number_of_features,threshold,validation_f1,validation_balanced_accuracy,final_accuracy,final_balanced_accuracy,final_precision,final_recall,final_f1,final_roc_auc,final_pr_auc,true_negative,false_positive,false_negative,true_positive
+ResQMesh No-Calendar Temporal XGBoost,2021,2023,52,0.5,0.9692307692307692,0.9886317498984978,0.7543402777777778,0.5376157407407407,0.5454545454545454,0.10416666666666667,0.1749271137026239,0.907664609053498,0.6388142749840919,839,25,258,30

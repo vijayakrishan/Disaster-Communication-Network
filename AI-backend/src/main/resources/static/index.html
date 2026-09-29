@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESQMESH AI - Disaster Risk Estimation Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- TOP HEADER -->
+    <header class="app-header">
+        <div class="header-container">
+            <div class="brand">
+                <div class="brand-badge">
+                    <span class="pulse-dot"></span>
+                    <span>MESH-AI DECISION SUPPORT</span>
+                </div>
+                <h1 class="brand-title">RESQMESH <span>AI</span></h1>
+                <p class="brand-subtitle">Physical + Temporal Environmental Disaster Risk Estimation Service</p>
+            </div>
+            <div class="header-status" id="modelHealthStatus">
+                <div class="status-indicator loading" id="statusIndicator">
+                    <span class="indicator-dot"></span>
+                    <span class="indicator-text" id="statusText">Checking Model...</span>
+                </div>
+                <div class="status-meta">
+                    <span id="headerModelVer">Version: resqmesh-final-validated</span>
+                    <span class="separator">|</span>
+                    <span id="headerFeatCount">52 Features</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <main class="main-container">
+
+        <!-- TOP STATS BAR -->
+        <section class="overview-bar">
+            <div class="stat-card">
+                <span class="stat-label">Model Architecture</span>
+                <span class="stat-value">XGBoost GBDT</span>
+                <span class="stat-sub">700 trees &bull; max depth 5</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Feature Set</span>
+                <span class="stat-value">52 Features</span>
+                <span class="stat-sub">Physical &amp; Temporal (No Calendar)</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Frozen Decision Threshold</span>
+                <span class="stat-value">0.5000</span>
+                <span class="stat-sub">Optimized on 2021 Dev Validation</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Unseen Test Event</span>
+                <span class="stat-value">2023 South TN</span>
+                <span class="stat-sub">ROC-AUC: 0.9077 &bull; PR-AUC: 0.6388</span>
+            </div>
+        </section>
+
+        <!-- DASHBOARD GRID -->
+        <div class="dashboard-grid">
+
+            <!-- LEFT COLUMN: INPUT PANEL -->
+            <section class="panel input-panel">
+                <div class="panel-header">
+                    <div>
+                        <h2 class="panel-title">Environmental &amp; Temporal Feature Inputs</h2>
+                        <p class="panel-desc">All 52 model features are grouped into physical weather observations and temporal derivations.</p>
+                    </div>
+                    <div class="demo-buttons">
+                        <button type="button" class="btn btn-safe" id="loadSafeBtn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                            Load Safe Demo
+                        </button>
+                        <button type="button" class="btn btn-danger" id="loadHighRiskBtn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                            Load High-Risk Demo
+                        </button>
+                        <button type="button" class="btn btn-secondary" id="clearBtn">Clear</button>
+                    </div>
+                </div>
+
+                <form id="predictionForm" class="feature-form">
+
+                    <!-- TAB NAVIGATION FOR INPUTS -->
+                    <div class="form-tabs">
+                        <button type="button" class="tab-btn active" data-tab="tab-weather">Basic Weather (10)</button>
+                        <button type="button" class="tab-btn" data-tab="tab-engineered">Engineered (4)</button>
+                        <button type="button" class="tab-btn" data-tab="tab-rain">Rain &amp; Precip (14)</button>
+                        <button type="button" class="tab-btn" data-tab="tab-temporal">Atmospheric &amp; Changes (24)</button>
+                    </div>
+
+                    <!-- TAB 1: BASIC WEATHER -->
+                    <div class="tab-content active" id="tab-weather">
+                        <div class="input-grid">
+                            <div class="form-group">
+                                <label for="temperature_2m">Temperature 2m (&deg;C)</label>
+                                <input type="number" step="any" id="temperature_2m" name="temperature_2m" required>
+                                <span class="help-text">Dry bulb surface air temp</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="relative_humidity_2m">Relative Humidity (%)</label>
+                                <input type="number" step="any" id="relative_humidity_2m" name="relative_humidity_2m" required>
+                                <span class="help-text">Air saturation level</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="dew_point_2m">Dew Point 2m (&deg;C)</label>
+                                <input type="number" step="any" id="dew_point_2m" name="dew_point_2m" required>
+                                <span class="help-text">Moisture condensation temp</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="precipitation">Precipitation (mm)</label>
+                                <input type="number" step="any" id="precipitation" name="precipitation" required>
+                                <span class="help-text">Total instant precipitation</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="rain">Rain (mm)</label>
+                                <input type="number" step="any" id="rain" name="rain" required>
+                                <span class="help-text">Liquid rain rate</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="surface_pressure">Surface Pressure (hPa)</label>
+                                <input type="number" step="any" id="surface_pressure" name="surface_pressure" required>
+                                <span class="help-text">Atmospheric pressure</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="cloud_cover">Total Cloud Cover (%)</label>
+                                <input type="number" step="any" id="cloud_cover" name="cloud_cover" required>
+                                <span class="help-text">Overall cloud density</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="cloud_cover_low">Low Cloud Cover (%)</label>
+                                <input type="number" step="any" id="cloud_cover_low" name="cloud_cover_low" required>
+                                <span class="help-text">Low-level convective cloud</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="wind_speed_10m">Wind Speed 10m (km/h)</label>
+                                <input type="number" step="any" id="wind_speed_10m" name="wind_speed_10m" required>
+                                <span class="help-text">Sustained surface wind</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="wind_direction_10m">Wind Direction (&deg;)</label>
+                                <input type="number" step="any" id="wind_direction_10m" name="wind_direction_10m" required>
+                                <span class="help-text">0-360 degrees</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB 2: ENGINEERED FEATURES -->
+                    <div class="tab-content" id="tab-engineered">
+                        <div class="input-grid">
+                            <div class="form-group">
+                                <label for="rain_binary">Rain Binary (0 / 1)</label>
+                                <input type="number" step="1" id="rain_binary" name="rain_binary" required>
+                                <span class="help-text">1 if rain &gt; 0, else 0</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="temperature_humidity_index">Temp-Humidity Index (THI)</label>
+                                <input type="number" step="any" id="temperature_humidity_index" name="temperature_humidity_index" required>
+                                <span class="help-text">temp * (rh / 100)</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="wind_u">Wind U-vector (m/s)</label>
+                                <input type="number" step="any" id="wind_u" name="wind_u" required>
+                                <span class="help-text">Zonal component</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="wind_v">Wind V-vector (m/s)</label>
+                                <input type="number" step="any" id="wind_v" name="wind_v" required>
+                                <span class="help-text">Meridional component</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB 3: RAIN & PRECIPITATION ACCUMULATION -->
+                    <div class="tab-content" id="tab-rain">
+                        <div class="input-grid">
+                            <div class="form-group">
+                                <label for="rain_3h">Rain 3h Accumulation (mm)</label>
+                                <input type="number" step="any" id="rain_3h" name="rain_3h" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="rain_6h">Rain 6h Accumulation (mm)</label>
+                                <input type="number" step="any" id="rain_6h" name="rain_6h" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="rain_12h">Rain 12h Accumulation (mm)</label>
+                                <input type="number" step="any" id="rain_12h" name="rain_12h" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="rain_24h">Rain 24h Accumulation (mm)</label>
+                                <input type="number" step="any" id="rain_24h" name="rain_24h" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="rain_48h">Rain 48h Accumulation (mm)</label>
+                                <input type="number" step="any" id="rain_48h" name="rain_48h" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="precip_3h">Precip 3h (mm)</label>
+                                <input type="number" step="any" id="precip_3h" name="precip_3h" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="precip_6h">Precip 6h (mm)</label>
+                                <input type="number" step="any" id="precip_6h" name="precip_6h" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="precip_12h">Precip 12h (mm)</label>
+                                <input type="number" step="any" id="precip_12h" name="precip_12h" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="precip_24h">Precip 24h (mm)</label>
+                                <input type="number" step="any" id="precip_24h" name="precip_24h" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="precip_48h">Precip 48h (mm)</label>
+                                <input type="number" step="any" id="precip_48h" name="precip_48h" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="rain_3h_max">Rain 3h Max (mm)</label>
+                                <input type="number" step="any" id="rain_3h_max" name="rain_3h_max" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="rain_6h_max">Rain 6h Max (mm)</label>
+                                <input type="number" step="any" id="rain_6h_max" name="rain_6h_max" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="rain_12h_max">Rain 12h Max (mm)</label>
+                                <input type="number" step="any" id="rain_12h_max" name="rain_12h_max" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="rain_24h_max">Rain 24h Max (mm)</label>
+                                <input type="number" step="any" id="rain_24h_max" name="rain_24h_max" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB 4: ATMOSPHERIC & TEMPORAL CHANGES -->
+                    <div class="tab-content" id="tab-temporal">
+                        <div class="input-grid">
+                            <div class="form-group">
+                                <label for="humidity_6h_mean">Humidity 6h Mean (%)</label>
+                                <input type="number" step="any" id="humidity_6h_mean" name="humidity_6h_mean" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="humidity_12h_mean">Humidity 12h Mean (%)</label>
+                                <input type="number" step="any" id="humidity_12h_mean" name="humidity_12h_mean" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="humidity_24h_mean">Humidity 24h Mean (%)</label>
+                                <input type="number" step="any" id="humidity_24h_mean" name="humidity_24h_mean" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="humidity_24h_max">Humidity 24h Max (%)</label>
+                                <input type="number" step="any" id="humidity_24h_max" name="humidity_24h_max" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="temperature_6h_mean">Temp 6h Mean (&deg;C)</label>
+                                <input type="number" step="any" id="temperature_6h_mean" name="temperature_6h_mean" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="temperature_24h_mean">Temp 24h Mean (&deg;C)</label>
+                                <input type="number" step="any" id="temperature_24h_mean" name="temperature_24h_mean" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="temperature_24h_min">Temp 24h Min (&deg;C)</label>
+                                <input type="number" step="any" id="temperature_24h_min" name="temperature_24h_min" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="temperature_24h_max">Temp 24h Max (&deg;C)</label>
+                                <input type="number" step="any" id="temperature_24h_max" name="temperature_24h_max" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cloud_6h_mean">Cloud 6h Mean (%)</label>
+                                <input type="number" step="any" id="cloud_6h_mean" name="cloud_6h_mean" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cloud_12h_mean">Cloud 12h Mean (%)</label>
+                                <input type="number" step="any" id="cloud_12h_mean" name="cloud_12h_mean" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cloud_24h_mean">Cloud 24h Mean (%)</label>
+                                <input type="number" step="any" id="cloud_24h_mean" name="cloud_24h_mean" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="pressure_change_3h">Pressure Change 3h (hPa)</label>
+                                <input type="number" step="any" id="pressure_change_3h" name="pressure_change_3h" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="pressure_change_6h">Pressure Change 6h (hPa)</label>
+                                <input type="number" step="any" id="pressure_change_6h" name="pressure_change_6h" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="pressure_change_12h">Pressure Change 12h (hPa)</label>
+                                <input type="number" step="any" id="pressure_change_12h" name="pressure_change_12h" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="pressure_change_24h">Pressure Change 24h (hPa)</label>
+                                <input type="number" step="any" id="pressure_change_24h" name="pressure_change_24h" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="rain_change_1h">Rain Change 1h (mm)</label>
+                                <input type="number" step="any" id="rain_change_1h" name="rain_change_1h" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="rain_change_3h">Rain Change 3h (mm)</label>
+                                <input type="number" step="any" id="rain_change_3h" name="rain_change_3h" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="rain_change_6h">Rain Change 6h (mm)</label>
+                                <input type="number" step="any" id="rain_change_6h" name="rain_change_6h" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="is_heavy_rain_3h">Heavy Rain 3h (&ge;10mm)</label>
+                                <input type="number" step="1" id="is_heavy_rain_3h" name="is_heavy_rain_3h" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="is_heavy_rain_6h">Heavy Rain 6h (&ge;20mm)</label>
+                                <input type="number" step="1" id="is_heavy_rain_6h" name="is_heavy_rain_6h" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="is_heavy_rain_24h">Heavy Rain 24h (&ge;50mm)</label>
+                                <input type="number" step="1" id="is_heavy_rain_24h" name="is_heavy_rain_24h" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="is_extreme_rain_24h">Extreme Rain 24h (&ge;100mm)</label>
+                                <input type="number" step="1" id="is_extreme_rain_24h" name="is_extreme_rain_24h" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="rain_acceleration">Rain Acceleration</label>
+                                <input type="number" step="any" id="rain_acceleration" name="rain_acceleration" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="humidity_pressure_risk">Humidity-Pressure Risk</label>
+                                <input type="number" step="any" id="humidity_pressure_risk" name="humidity_pressure_risk" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary btn-predict" id="predictBtn">
+                            <span class="spinner" id="predictSpinner"></span>
+                            <span class="btn-text">Execute AI Risk Estimation</span>
+                        </button>
+                    </div>
+
+                </form>
+            </section>
+
+            <!-- RIGHT COLUMN: RESULTS & EXPLANATION -->
+            <section class="panel result-panel">
+                <div class="panel-header">
+                    <h2 class="panel-title">Inference Result &amp; Decision Support</h2>
+                    <span class="badge-live" id="liveBadge">REAL XGBOOST ENGINE</span>
+                </div>
+
+                <!-- ALERT MESSAGE BOX -->
+                <div id="alertBox" class="alert-box hidden"></div>
+
+                <!-- PREDICTION RESULT CARD -->
+                <div class="result-card" id="resultCard">
+                    <div class="result-placeholder" id="resultPlaceholder">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                        <p>Load demo data or input values and click <strong>Execute AI Risk Estimation</strong> to obtain real-time inference from the trained XGBoost model.</p>
+                    </div>
+
+                    <div class="result-content hidden" id="resultContent">
+                        
+                        <!-- RISK LEVEL BADGE & SCORE -->
+                        <div class="result-header-row">
+                            <div>
+                                <span class="result-label">Operational Risk Level</span>
+                                <div class="risk-badge" id="riskBadge">SAFE</div>
+                            </div>
+                            <div class="text-right">
+                                <span class="result-label">Estimated Risk Score</span>
+                                <div class="risk-score-display" id="riskScoreDisplay">0.0000</div>
+                            </div>
+                        </div>
+
+                        <!-- PROGRESS / GAUGE BAR -->
+                        <div class="meter-wrapper">
+                            <div class="meter-track">
+                                <div class="meter-bar" id="meterBar"></div>
+                            </div>
+                            <div class="meter-scale">
+                                <span>0.0 (Safe)</span>
+                                <span>0.35 (Warning)</span>
+                                <span>0.50 (Frozen Alert Threshold)</span>
+                                <span>1.0 (Extreme)</span>
+                            </div>
+                        </div>
+
+                        <!-- DECISION DETAILS -->
+                        <div class="result-meta-grid">
+                            <div class="meta-item">
+                                <span class="meta-title">Decision Threshold</span>
+                                <span class="meta-val" id="metaThreshold">0.5000</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-title">Binary Model Alert</span>
+                                <span class="meta-val" id="metaBinaryDecision">NORMAL</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-title">Inference Latency</span>
+                                <span class="meta-val" id="metaLatency">-- ms</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-title">Model Version</span>
+                                <span class="meta-val" id="metaVersion">resqmesh-final-validated</span>
+                            </div>
+                        </div>
+
+                        <!-- RAW RESPONSE JSON TOGGLE -->
+                        <details class="json-details">
+                            <summary>View Raw REST API Response</summary>
+                            <pre><code id="jsonOutput">{}</code></pre>
+                        </details>
+
+                    </div>
+                </div>
+
+                <!-- SCIENTIFIC EXPLANATION NOTE -->
+                <div class="notice-card">
+                    <div class="notice-header">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                        <h4>Methodology &amp; Scientific Intent</h4>
+                    </div>
+                    <p class="notice-body">
+                        The model estimates disaster risk using environmental and temporal weather patterns. It is intended as <strong>decision support</strong> and does not guarantee that a disaster will occur.
+                    </p>
+                    <p class="notice-sub">
+                        Risk scores reflect pattern alignment with historical Tamil Nadu torrential rainfall events rather than calibrated absolute physical probability.
+                    </p>
+                </div>
+
+                <!-- VALIDATION BENCHMARKS -->
+                <div class="benchmark-card">
+                    <h4>Validated Model Benchmarks (Unseen 2023 Event)</h4>
+                    <div class="benchmark-grid">
+                        <div class="bm-item"><span class="bm-lbl">Accuracy</span><span class="bm-val">75.43%</span></div>
+                        <div class="bm-item"><span class="bm-lbl">Balanced Acc</span><span class="bm-val">53.76%</span></div>
+                        <div class="bm-item"><span class="bm-lbl">ROC-AUC</span><span class="bm-val">0.9077</span></div>
+                        <div class="bm-item"><span class="bm-lbl">PR-AUC</span><span class="bm-val">0.6388</span></div>
+                        <div class="bm-item"><span class="bm-lbl">Precision</span><span class="bm-val">54.55%</span></div>
+                        <div class="bm-item"><span class="bm-lbl">Recall</span><span class="bm-val">10.42%</span></div>
+                    </div>
+                    <div class="cm-display">
+                        <span class="cm-title">Unseen 2023 Confusion Matrix (Total: 1,152):</span>
+                        <div class="cm-chips">
+                            <span class="chip chip-tn">TN: 839</span>
+                            <span class="chip chip-fp">FP: 25</span>
+                            <span class="chip chip-fn">FN: 258</span>
+                            <span class="chip chip-tp">TP: 30</span>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="app-footer">
+        <p>RESQMESH Deployable LoRa Mesh Emergency System &bull; Standalone AI Backend Demonstration &bull; Port: 8086</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

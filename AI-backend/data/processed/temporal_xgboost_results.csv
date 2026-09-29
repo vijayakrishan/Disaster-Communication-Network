@@ -1,0 +1,2 @@
+model,features,train_rows,test_rows,accuracy,balanced_accuracy,precision,recall,f1,roc_auc,pr_auc,threshold
+Temporal XGBoost,59,10944,1152,0.7482638888888888,0.4988425925925926,0.0,0.0,0.0,0.8862083654835391,0.6692144955672323,0.5

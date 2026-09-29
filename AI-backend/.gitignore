@@ -1,0 +1,121 @@
+# ==============================================================================
+# AI-backend .gitignore
+# ==============================================================================
+
+# Maven Build Artifacts & Binaries
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+*.class
+*.jar
+*.war
+*.ear
+
+# Python Virtual Environments & Packages
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Python Bytecode & Training Caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Environment Variables, Secrets & Credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+
+# IDE & Editor Files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.classpath
+.project
+.settings/
+*.iml
+*.ipr
+*.iws
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+
+# Logs & Temporary Files
+*.log
+logs/
+temp/
+tmp/
+*.tmp
+
+# Large Raw & Processed Datasets (>50MB)
+data/raw/CORRECTED_2023_2026_NEPAL_FLOOD_WEATHER_KAGGLE.csv
+data/raw/disasterIND.csv
+data/raw/flood.csv
+data/raw/flood_risk_dataset_india.csv
+data/raw/Indian_Climate_Dataset_2024_2025.csv
+data/raw/nepal_flood_weather_dataset_kaggle_2023_2026.csv
+data/raw/pressure_tel_hr_tamil_nadu_sw_gw_tn_2025_2025.csv
+data/raw/rainfall in india 1901-2015.csv
+data/raw/rainfall_tel_hr_tamil_nadu_sw_gw_tn_2021_2025.csv
+data/raw/riverdischarge_manual_daily_cwc_ap_1950_2000.csv
+data/raw/river_discharge_manual_daily_cwc_ap_2001_2025.csv
+data/raw/river_discharge_manual_daily_cwc_tn_2001_2025.csv
+data/raw/river_discharge_manual_daily_cwc_tn_2026_2030.csv
+data/raw/rwl_tel_hr_tamil_nadu_sw_gw_27_2021_2025.csv
+data/raw/temprature_tel_hr_tamil_nadu_sw_gw_tn_2021_2025.csv
+data/raw/terrain_dataset.csv
+data/raw/TNweather_1.8M.csv
+data/processed/environmental_combined.csv
+data/processed/event_aware_test.csv
+data/processed/event_aware_train.csv
+data/processed/event_labeled_weather.csv
+data/processed/event_test_dataset.csv
+data/processed/event_training_dataset.csv
+data/processed/event_train_dataset.csv
+data/processed/event_weather_discharge.csv
+data/processed/final_ai_training_data.csv
+data/processed/flood_weather_matched.csv
+data/processed/future_risk_dataset.csv
+data/processed/pressure_clean.csv
+data/processed/prototype_training_dataset.csv
+data/processed/rainfall_clean.csv
+data/processed/rainfall_parthibanur_features.csv
+data/processed/temperature_clean.csv
+data/processed/temporal_weather_training_data.csv
+data/processed/test_event_aware.csv
+data/processed/tn_river_discharge_features.csv
+data/processed/tn_river_discharge_features_final.csv
+data/processed/train_event_aware.csv
+data/processed/water_level_labeled.csv
+data/processed/water_level_parthibanur.csv
+data/processed/water_level_target_ready.csv
+data/processed/xgboost_test.csv
+data/processed/xgboost_train.csv
+*.csv.gz
+*.csv.zip

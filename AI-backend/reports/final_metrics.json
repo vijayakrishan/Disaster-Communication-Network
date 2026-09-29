@@ -1,0 +1,30 @@
+{
+  "model_name": "ResQMesh No-Calendar Temporal XGBoost",
+  "model_version": "resqmesh-final-validated",
+  "training_event": "2021 Tamil Nadu Flood (statewide label)",
+  "unseen_test_event": "2023 South Tamil Nadu Flood (Thoothukudi, Tirunelveli, Kanyakumari, Tenkasi)",
+  "feature_count": 52,
+  "selected_threshold": 0.5,
+  "metrics": {
+    "accuracy": 0.7543402777777778,
+    "balanced_accuracy": 0.5376157407407407,
+    "precision": 0.5454545454545454,
+    "recall": 0.10416666666666667,
+    "f1_score": 0.1749271137026239,
+    "roc_auc": 0.907664609053498,
+    "pr_auc": 0.6388142749840919
+  },
+  "confusion_matrix": {
+    "true_negative": 839,
+    "false_positive": 25,
+    "false_negative": 258,
+    "true_positive": 30,
+    "total_test_samples": 1152
+  },
+  "validation_tuning": {
+    "val_f1": 0.9692307692307692,
+    "val_balanced_accuracy": 0.9886317498984978,
+    "val_roc_auc": 0.9980194083149245,
+    "val_pr_auc": 0.9929038200952401
+  }
+}

@@ -1,0 +1,23 @@
+[
+  "temperature_2m",
+  "relative_humidity_2m",
+  "dew_point_2m",
+  "precipitation",
+  "rain",
+  "surface_pressure",
+  "cloud_cover",
+  "cloud_cover_low",
+  "wind_speed_10m",
+  "temperature_humidity_index",
+  "river_discharge",
+  "discharge_change_1d",
+  "discharge_change_3d",
+  "discharge_change_7d",
+  "discharge_3d_mean",
+  "discharge_7d_mean",
+  "discharge_7d_max",
+  "discharge_7d_min",
+  "discharge_30d_mean",
+  "discharge_vs_7d_mean",
+  "discharge_vs_30d_mean"
+]

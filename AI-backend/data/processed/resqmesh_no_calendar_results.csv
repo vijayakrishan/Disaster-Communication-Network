@@ -1,0 +1,2 @@
+model,training_event,test_event,features,threshold,accuracy,balanced_accuracy,precision,recall,f1,roc_auc,pr_auc,true_negative,false_positive,false_negative,true_positive
+No-calendar temporal XGBoost,2021,2023,52,0.002,0.8515625,0.8084490740740741,0.6956521739130435,0.7222222222222222,0.7086882453151618,0.907664609053498,0.6388142749840919,773,91,80,208

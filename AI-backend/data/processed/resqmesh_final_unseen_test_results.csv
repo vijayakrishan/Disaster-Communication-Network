@@ -1,0 +1,2 @@
+test_event,training_event,threshold,accuracy,balanced_accuracy,precision,recall,f1,roc_auc,pr_auc,true_negative,false_positive,false_negative,true_positive
+2023,2021,0.5,0.7491319444444444,0.4994212962962963,0.0,0.0,0.0,0.8803489904835392,0.6652647940322118,863,1,288,0

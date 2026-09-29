@@ -1,0 +1,10 @@
+{
+  "selected_threshold": 0.5,
+  "selection_method": "maximum_validation_f1",
+  "validation_roc_auc": 0.9997242996593185,
+  "validation_pr_auc": 0.9986213917882492,
+  "validation_f1": 0.9987834549878345,
+  "validation_precision": 0.9975698663426489,
+  "validation_recall": 1.0,
+  "validation_balanced_accuracy": 0.9995939910678036
+}
